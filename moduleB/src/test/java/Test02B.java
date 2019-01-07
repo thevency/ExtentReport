@@ -32,9 +32,21 @@ public class Test02B extends Listen {
         System.out.println("... running testcase 3 ..... in module B");
     }
     @Test
+    public void testcase5() {
+        int c = Math02.sum(2, 7);
+        Assert.assertEquals(c, 9);
+        System.out.println("... running testcase 3 ..... in module B");
+    }
+    @Test
     public void testcase6() {
         int c = Math02.sum(2, 7);
         Assert.assertEquals(c, 9);
+        System.out.println("... running testcase 3 ..... in module B");
+    }
+    @Test
+    public void testcase7() {
+        int c = Math02.sum(5, 5);
+        Assert.assertEquals(c, 10);
         System.out.println("... running testcase 3 ..... in module B");
     }
 }
