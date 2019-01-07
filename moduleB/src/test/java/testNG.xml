@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Extent Report Suites">
+  <test name="REPORT MODULE B" parallel="classes" thread-count="1">
+    <classes>
+      <class name="Test01B"/>
+      <class name="Test02B"/>
+    </classes>
+  </test>
+</suite> <!-- Default suite -->
