@@ -47,6 +47,6 @@ public class Test02B extends Listen {
     public void testcase7() {
         int c = Math02.sum(5, 5);
         Assert.assertEquals(c, 10);
-        System.out.println("... running testcase 3 ..... in module B");
+//        System.out.println("... running testcase 3 ..... in module B");
     }
 }
