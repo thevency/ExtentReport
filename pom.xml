@@ -27,6 +27,10 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <extentreports.version>3.1.5</extentreports.version>
+
+        <!--<main.basedir>${project.basedir}</main.basedir>-->
+
     </properties>
+
 
 </project>

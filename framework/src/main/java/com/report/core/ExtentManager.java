@@ -2,7 +2,11 @@ package com.report.core;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.ExtentXReporter;
 import org.testng.ITestResult;
 
 import java.io.File;
@@ -15,6 +19,7 @@ public class ExtentManager {
 	private static ExtentReports extent;
 	private static ThreadLocal<ExtentTest> parentTest = new ThreadLocal<ExtentTest>();
 	private static ThreadLocal<ExtentTest> test = new ThreadLocal<ExtentTest>();
+	private static ThreadLocal<ExtentTest> nodeClass = new ThreadLocal<ExtentTest>();
 
 	public static ExtentReports getInstance() {
 		if (extent == null)
@@ -37,13 +42,19 @@ public class ExtentManager {
 
 	protected static void createSubNode(Method method){
 
-		ExtentTest child =  parentTest.get().createNode(method.getName());
+		ExtentTest child =  nodeClass.get().createNode(method.getName()).log(Status.INFO, MarkupHelper.createLabel("===" + method.getName() + "===", ExtentColor.BLUE));
 
 		test.set(child);
 	}
-	protected static void createMainNode(String classname){
+	protected static void createSubNodeClass(String className){
 
-		ExtentTest parent = extent.createTest(classname);
+		ExtentTest childClass =  parentTest.get().createNode(className);
+
+		nodeClass.set(childClass);
+	}
+	protected static void createMainNode(String mainNodeName){
+
+		ExtentTest parent = extent.createTest(mainNodeName);
 
 		parentTest.set(parent);
 	}

@@ -20,4 +20,26 @@
             <!--<version>3.1.5</version>-->
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-remote-resources-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>bundle</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includes>
+                        <include>**/picture.jpg</include>
+                        <!--<include>**/*.sql</include>-->
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
