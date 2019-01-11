@@ -25,11 +25,6 @@ public class Test01B extends Listen {
         Assert.assertEquals(c, 9);
         System.out.println("... running testcase 3 ..... in module B");
     }
-    @Test
-    public void testcase4() {
-        int c = Math02.sum(2, 7);
-        Assert.assertEquals(c, 9);
-        System.out.println("... running testcase 3 ..... in module B");
-    }
+    //testcase04 is removed 11.01.2019
 
 }
